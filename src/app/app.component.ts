@@ -88,7 +88,7 @@ export class AppComponent {
       if (this.roomLabel == 1) {
         alert("Maximum number of persons in one room is 4")
       }
-      else if (((adults + children) / rooms) > 4) {
+      else if (((adults + children) / rooms) >= 4) {
         alert("Maximum number of persons in one room is 4")
       }
       else if (((adults + children) / rooms) < 4)
@@ -112,7 +112,11 @@ export class AppComponent {
     var adults = this.adultsLabel;
     var children = this.childrenLabel;
     if (children < 4) {
+      if (((adults + children) / rooms) < 4){
       this.childrenLabel++;
+      }
+      else
+      alert("Maximum number of persons in one room is 4")
     }
     if (children >= 4) {
       if (this.roomLabel == 1) {
